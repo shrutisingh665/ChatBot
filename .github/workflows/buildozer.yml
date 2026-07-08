@@ -13,10 +13,16 @@ jobs:
     - name: Checkout Source Code
       uses: actions/checkout@v4
 
-    - name: Set up System JDK and Build Utilities
+    - name: Set up System Build Utilities
       run: |
         sudo apt-get update
-        sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libssl-dev cmake
+        sudo apt-get install -y git zip unzip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libssl-dev cmake
+
+    - name: Set up Java Development Kit (JDK)
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '11'
 
     - name: Set up Python
       uses: actions/setup-python@v5
