@@ -13,11 +13,44 @@ jobs:
     - name: Checkout Source Code
       uses: actions/checkout@v4
 
-    - name: Build APK with Buildozer Action
-      uses: ArtemSBulgakov/buildozer-action@v1
+    - name: Set up Java Development Kit (JDK)
+      uses: actions/setup-java@v4
       with:
-        command: buildozer android debug
-        buildozer_version: stable
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install System Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git zip unzip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libssl-dev cmake
+
+    - name: Install Buildozer & Cython
+      run: |
+        pip install --upgrade pip
+        pip install buildozer cython==0.29.36
+
+    - name: Configure Pre-installed Android SDK and NDK Paths
+      run: |
+        # Find the first pre-installed NDK folder
+        NDK_DIR=$(ls -d /usr/local/lib/android/sdk/ndk/* | head -n 1)
+        echo "Using pre-installed Android SDK: /usr/local/lib/android/sdk"
+        echo "Using pre-installed Android NDK: $NDK_DIR"
+        
+        # Append configurations to buildozer.spec
+        echo "" >> buildozer.spec
+        echo "android.sdk_path = /usr/local/lib/android/sdk" >> buildozer.spec
+        echo "android.ndk_path = $NDK_DIR" >> buildozer.spec
+
+    - name: Package Android APK using Buildozer
+      run: |
+        buildozer android debug
+      env:
+        BUILDOZER_ACCEPT_SDK_LICENSE: "1"
 
     - name: Upload Output APK Artifact
       uses: actions/upload-artifact@v4
