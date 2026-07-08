@@ -1,0 +1,429 @@
+{
+  "_comment": "Comprehensive Placement Prep Chatbot intents containing detailed patterns and responses with emojis for all 18 categories.",
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Anyone there?", "Start prep", "Help me prepare"],
+      "responses": ["Hello! Welcome to your ultimate Placement Preparation Assistant. 😊 I can help you prepare for Aptitude, Programming Languages, DSA, DBMS, OS, Networks, OOP, Web Dev, Git, Group Discussions, and HR rounds. What would you like to study today? 🚀", "Hi! Ready to prepare for your placements? Ask me about DSA, Coding, Aptitude, CS Core subjects, Resumes, or HR questions! 📚"],
+      "context": [""]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye", "See you later", "Exit", "Close chat"],
+      "responses": ["Goodbye! Keep studying and practicing. You've got this! 🎉", "Bye! Best of luck with your placement preparation! ✅"],
+      "context": [""]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "Helpful", "Awesome, thanks", "Appreciate it"],
+      "responses": ["You're welcome! Glad I could help you prepare. 😊", "Anytime! Let me know if you want to explore other topics. 👍"],
+      "context": [""]
+    },
+    {
+      "tag": "noanswer",
+      "patterns": [],
+      "responses": ["I'm not sure I understand. 🤔 Could you ask a question related to placements, DSA, Aptitude, Core CS, or HR?", "I didn't get that. Please search for topics in our placement preparation categories. 🔍"],
+      "context": [""]
+    },
+    {
+      "tag": "aptitude_percentage_profit_interest",
+      "patterns": [
+        "Aptitude percentage questions", "How to solve profit and loss?", 
+        "Simple interest formula", "Compound interest calculator logic", 
+        "SI and CI shortcuts"
+      ],
+      "responses": [
+        "📊 PERCENTAGE: Focus on fraction conversions (e.g. 1/8 = 12.5%).\n📈 PROFIT & LOSS: SP = CP * (100 + P%)/100. Profit% = (Profit/CP)*100. Remember CP is always the base.\n💰 SIMPLE INTEREST (SI): SI = (P * R * T) / 100.\n🏦 COMPOUND INTEREST (CI): Amount = P(1 + R/100)^T. CI = Amount - P. For 2 years, difference between CI & SI is P(R/100)^2. 🧮",
+        "To master profit, loss, and percentages: memorize key percentage charts. For Compound Interest, use successive percentage formula: a + b + (ab)/100 to quickly calculate rates without full exponent multiplication. ✅"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "aptitude_ratio_average_partnership_mixture",
+      "patterns": [
+        "Ratio and proportion tips", "Average problems", "Partnership investment questions", 
+        "Mixture and allegation method", "Ages logic problems"
+      ],
+      "responses": [
+        "🔢 RATIO & PROPORTION: If A:B = 2:3 and B:C = 4:5, combine them as A:B:C = 8:12:15.\n📊 AVERAGES: Average = Sum of observations / Number of observations.\n🤝 PARTNERSHIP: Profit Ratio = (Investment 1 * Time 1) : (Investment 2 * Time 2).\n🧪 MIXTURE & ALLEGATION: Use the cross-multiplication rule to find ratios: Ratio of Cheaper to Dearer = (Dearer Price - Mean Price) / (Mean Price - Cheaper Price).\n🎂 AGES: Formulate linear equations using 'x' for present age, (x-n) for 'n' years ago, and (x+n) for 'n' years hence. 💡",
+        "Remember: In partnership questions, if investments are equal, profits are shared in ratio of time periods. If time is equal, profits are shared in ratio of capital investments. 💰"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "aptitude_time_work_pipes_distance_streams",
+      "patterns": [
+        "Time and work formula", "Pipes and cisterns", "Time speed and distance", 
+        "Boats and streams relative speed", "Relative speed trains problems"
+      ],
+      "responses": [
+        "⏰ TIME & WORK: If A does work in X days and B in Y days, together they take (X*Y)/(X+Y) days. Work done is inversely proportional to time.\n🚰 PIPES & CISTERNS: Outlet pipes take negative work values. Total capacity is the LCM of time intervals.\n🏃 TIME, SPEED & DISTANCE: Distance = Speed * Time. Convert km/hr to m/s by multiplying by 5/18.\n⛵ BOATS & STREAMS: Upstream speed = Speed of boat (u) - Speed of stream (v). Downstream speed = u + v. ⛵",
+        "For trains: Relative Speed of two trains crossing each other is (S1 + S2) if in opposite directions, and |S1 - S2| if in same direction. Total distance is always (Length of Train 1 + Length of Train 2). 🚂"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "aptitude_numbers_divisibility_hcf",
+      "patterns": [
+        "Number system basics", "Divisibility rules", "HCF and LCM problems", 
+        "Find unit digit"
+      ],
+      "responses": [
+        "🔢 DIVISIBILITY RULES: A number is divisible by 3/9 if the sum of digits is divisible by 3/9; by 4 if the last two digits are divisible by 4; by 11 if difference of sums of alternate digits is 0 or multiple of 11.\n🧮 HCF & LCM: Product of two numbers = HCF * LCM. HCF of fractions = HCF(Numerators) / LCM(Denominators). LCM of fractions = LCM(Numerators) / HCF(Denominators).",
+        "Number System: Unit digit problems are solved using cyclicity (e.g. cyclicity of 2, 3, 7, 8 is 4; cyclicity of 5, 6 is 1). Divide the exponent by 4 to locate the repeating unit place. 💡"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "aptitude_probability_permutation",
+      "patterns": [
+        "Permutation and combination", "Probability formulas", "Probability card and coin problems",
+        "P and C shortcuts"
+      ],
+      "responses": [
+        "🎲 PERMUTATION (Arrangement): nPr = n! / (n - r)!. Use when order matters.\n🃏 COMBINATION (Selection): nCr = n! / (r! * (n - r)!). Use when order doesn't matter.\n🪙 PROBABILITY: P(A) = Number of favorable outcomes / Total number of outcomes. 0 <= P(A) <= 1. P(A or B) = P(A) + P(B) - P(A and B). 🎲",
+        "Card Problems: Standard deck has 52 cards (26 red, 26 black), split into 4 suits (Spades, Clubs, Hearts, Diamonds) with 13 cards each. Coin tosses follow binomial distributions: (p + q)^n. 🃏"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "aptitude_di_simplification_clock_calendar",
+      "patterns": [
+        "Data interpretation tables and graphs", "Simplification shortcuts", "Clock problems degrees",
+        "Calendar odd days logic"
+      ],
+      "responses": [
+        "📊 DATA INTERPRETATION: Practice reading bar charts, pie charts, tables, and line graphs rapidly. Focus on calculating averages, percentages, and ratios from datasets.\n🧮 SIMPLIFICATION: Always apply the BODMAS rule (Brackets, Of, Division, Multiplication, Addition, Subtraction).\n⏰ CLOCKS: Angle between hour and minute hand = |30H - 11/2 M| degrees. Hands coincide 22 times in 24 hours.\n📅 CALENDARS: Find the number of 'odd days'. A normal year has 365 days (52 weeks + 1 odd day). A leap year has 366 days (52 weeks + 2 odd days). Centennial years are leap years only if divisible by 400. 📅"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "aptitude_reasoning_blood_coding_relations",
+      "patterns": [
+        "Blood relations puzzle", "Coding decoding questions", "Direction sense rules",
+        "Logical reasoning puzzles"
+      ],
+      "responses": [
+        "🌳 BLOOD RELATIONS: Draw a family tree. Use squares for males, circles for females, double horizontal lines for couples, and vertical lines for generations.\n🔐 CODING-DECODING: Memorize alphabet ranks (A=1, Z=26) and opposites using the EJOTY (5, 10, 15, 20, 25) rule.\n🧭 DIRECTION SENSE: Always draw a cardinal cross (N, S, E, W) on paper. Apply Pythagoras Theorem (a^2 + b^2 = c^2) to find short straight-line displacement. 🧭",
+        "For arrangements: First read absolute clues (e.g. 'A is seated second to left of B'), draw a rough circle or line, and then use relative clues to eliminate incorrect possibilities. 🧩"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "prog_python",
+      "patterns": [
+        "Python variables and data types", "Python strings lists tuples dictionaries sets", 
+        "Python loops functions lambda", "File handling in python", "Python exception handling", 
+        "OOP python classes", "NumPy and Pandas basics"
+      ],
+      "responses": [
+        "🐍 PYTHON ESSENTIALS:\n1. DATA TYPES: int, float, str, bool. Lists (mutable, ordered `[]`), Tuples (immutable, ordered `()`), Dictionaries (mutable, key-value `{}`), Sets (mutable, unordered, unique `{}`).\n2. FUNCTIONS: Defined using `def`. Lambda is an anonymous single-expression function: `lambda x: x * 2`.\n3. FILES & EXCEPTIONS: Open using context managers: `with open('file.txt', 'r') as f:`. Handle errors using `try`, `except`, `finally`.\n4. OOP: Uses `class`, `self` parameter, `def __init__(self):` constructor, and supports inheritance.\n5. NUMPY & PANDAS: NumPy is used for fast numerical multidimensional arrays. Pandas is used for DataFrame operations, CSV reading, and structured data analysis. 📊",
+        "Python is dynamically typed and garbage-collected. Key topics: list comprehensions `[x for x in list]`, generators, and libraries (like NumPy and Pandas for data manipulation). 🐍"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "prog_c",
+      "patterns": [
+        "C programming variables and pointers", "C arrays functions structures", 
+        "Dynamic memory allocation in C", "File handling in C", "Malloc calloc free"
+      ],
+      "responses": [
+        "💻 C PROGRAMMING CORE:\n1. POINTERS: Variables storing memory addresses of other variables. Declared using `*p` and dereferenced using `*p`. Address-of operator is `&`.\n2. STRUCTURES: User-defined datatypes combining different data types. Declared using `struct`.\n3. DYNAMIC MEMORY ALLOCATION: Managed in heap using `malloc()` (uninitialized memory), `calloc()` (zero-initialized), `realloc()` (resizing), and `free()` (releasing memory to prevent leaks). Includes header `<stdlib.h>`.\n4. FILE HANDLING: Done using `FILE` pointers with functions like `fopen()`, `fclose()`, `fprintf()`, `fscanf()`, `fgets()`. 📁",
+        "C is a statically typed, structured programming language. Memory is managed manually by the developer, making pointers and struct layouts essential topics in technical tests. ⚙"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "prog_java",
+      "patterns": [
+        "Java classes and objects", "Java inheritance polymorphism interfaces", 
+        "Java collections framework", "Exception handling in Java", "ArrayList HashMap in Java"
+      ],
+      "responses": [
+        "☕ JAVA PROGRAMMING:\n1. OOP PRINCIPLES: Java is strictly class-based. Objects are instances of classes. Supports inheritance (`extends`), interfaces (`implements`), encapsulation (private variables, getters/setters), and polymorphism (method overloading/overriding).\n2. EXCEPTION HANDLING: Managed using `try`, `catch`, `finally`, `throw`, and `throws`. All exceptions inherit from `Throwable`.\n3. COLLECTIONS FRAMEWORK: Contains Interfaces (List, Set, Queue, Map) and implementation classes (ArrayList, LinkedList, HashSet, TreeSet, HashMap, TreeMap). Use HashMaps for O(1) lookup speeds. 🏗",
+        "Java uses JVM (Java Virtual Machine) for platform independence ('Write Once, Run Anywhere'). Garbage collection is automated. Know the difference between Abstract classes (can have constructors and state) and Interfaces (contract of behavior). ☕"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "ds_linear",
+      "patterns": [
+        "Data structures arrays and linked list", "Stack and queue operations", 
+        "Circular queue deque", "Hash table hashing collision resolution"
+      ],
+      "responses": [
+        "🧱 LINEAR DATA STRUCTURES:\n1. ARRAYS: Contiguous memory allocation, O(1) index access, static size.\n2. LINKED LISTS: Non-contiguous nodes connected via pointers. Dynamic size, O(N) lookup.\n3. STACKS: LIFO (Last In First Out). Push/Pop operations take O(1) time.\n4. QUEUES: FIFO (First In First Out). Enqueue/Dequeue takes O(1) time.\n5. CIRCULAR QUEUE: Connects last position back to first to optimize empty spaces.\n6. DEQUE (Double-ended queue): Insert/delete possible at both front and rear.\n7. HASH TABLES: Map keys to values using a Hash Function. Collision resolution is handled by Chaining (linked lists) or Open Addressing (Linear Probing, Quadratic Probing, Double Hashing). ⚙",
+        "Stacks are used in recursion and expression parsing. Queues are used in scheduling algorithms and BFS. Hash Tables provide O(1) average lookup time. ⚡"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "ds_non_linear",
+      "patterns": [
+        "Trees binary tree BST", "AVL tree heap trie", 
+        "Graph representation adjacency list matrix"
+      ],
+      "responses": [
+        "🌲 NON-LINEAR DATA STRUCTURES:\n1. BINARY TREE: Nodes have at most two children.\n2. BST (Binary Search Tree): Left child <= Parent < Right child. Inorder traversal of BST yields sorted values. Average search is O(log N).\n3. AVL TREE: Self-balancing BST. Height difference of left/right subtrees (Balance Factor) is at most 1. Uses rotations (LL, RR, LR, RL) to balance.\n4. HEAP: Complete binary tree. Max-Heap (parent >= child), Min-Heap (parent <= child). Heapify takes O(log N) time.\n5. TRIE: Prefix tree used for fast dictionary word retrieval.\n6. GRAPH: Represented via Adjacency Matrix (O(V^2) space) or Adjacency List (O(V + E) space). 🕸",
+        "Tries are excellent for autocomplete features. AVL trees ensure O(log N) worst-case time for search/insert/delete operations. Heaps are used in Priority Queues. 🌲"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "alg_searching_sorting",
+      "patterns": [
+        "Linear search binary search", "Bubble sort selection sort insertion sort", 
+        "Merge sort quick sort heap sort complexity"
+      ],
+      "responses": [
+        "🔍 SEARCHING & SORTING ALGORITHMS:\n1. SEARCHING: Linear Search (O(N) time), Binary Search (O(log N), requires sorted array).\n2. BASIC SORTS: Bubble Sort (O(N^2)), Selection Sort (O(N^2), minimizes swaps), Insertion Sort (O(N^2), efficient for nearly sorted data).\n3. ADVANCED SORTS:\n   - Merge Sort: Divide and conquer, O(N log N) time, O(N) auxiliary space, stable.\n   - Quick Sort: Pivot-based divide and conquer, O(N log N) average, O(N^2) worst case, O(log N) space, unstable.\n   - Heap Sort: Uses a binary heap structure, O(N log N) time, O(1) auxiliary space, unstable. 🔄",
+        "Binary Search halves search spaces recursively. Merge Sort is stable and preferred for linked lists. Quick Sort is in-place and fast in practice. ⚡"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "alg_graph",
+      "patterns": [
+        "BFS DFS algorithms", "Dijkstra Bellman Ford", 
+        "Floyd Warshall Kruskal Prim minimum spanning tree"
+      ],
+      "responses": [
+        "🕸 GRAPH ALGORITHMS:\n1. TRAVERSALS: BFS (Breadth-First Search, uses Queue, finds shortest path in unweighted graphs), DFS (Depth-First Search, uses Stack/Recursion).\n2. SHORTEST PATHS:\n   - Dijkstra: Single-source shortest path, greedy, O(E log V), does not support negative weights.\n   - Bellman-Ford: Single-source, dynamic programming, O(V*E), detects negative weight cycles.\n   - Floyd-Warshall: All-pairs shortest path, DP, O(V^3) time.\n3. MINIMUM SPANNING TREE (MST):\n   - Kruskal: Edge-based greedy approach, uses Disjoint Set Union (DSU), sorting edges O(E log E).\n   - Prim: Vertex-based greedy approach, uses priority queues, O(E log V). 🧭",
+        "BFS uses level-order queuing. DFS explores paths to dead-ends. Dijkstra uses a min-priority queue to greedily extract the closest unvisited vertex. 🗺"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "alg_paradigms",
+      "patterns": [
+        "Dynamic programming algorithms", "Greedy algorithms", 
+        "Backtracking divide and conquer", "Sliding window two pointers technique"
+      ],
+      "responses": [
+        "💡 ALGORITHM PARADIGMS:\n1. DYNAMIC PROGRAMMING: Solves complex problems by breaking down into overlapping subproblems, saving computations using Memoization or Tabulation. 🤔\n2. GREEDY: Makes the locally optimal choice at each step (e.g. Huffman Coding, fractional knapsack).\n3. BACKTRACKING: Explores paths and backtracks upon failure (e.g. N-Queens, Sudoku solver).\n4. DIVIDE & CONQUER: Divides problem into disjoint subproblems (e.g. Merge Sort, Binary Search).\n5. SLIDING WINDOW & TWO POINTERS: Optimizes O(N^2) nested loops down to O(N) by keeping pointers/windows bounding elements. ⚡",
+        "Two-pointers are useful for sorting/searching pairs. Sliding window handles continuous subarrays. Greedy assumes localized choices construct a global optimum. ✅"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "dbms_fundamentals",
+      "patterns": [
+        "What is DBMS and RDBMS?", "Primary key foreign key candidate key", 
+        "SQL joins", "Normalization dbms", "Database normalization forms"
+      ],
+      "responses": [
+        "🗄 DATABASE MANAGEMENT SYSTEMS (DBMS):\n1. KEYS: Candidate Key (minimal set of attributes that uniquely identify a tuple), Primary Key (selected candidate key, cannot be null, unique), Foreign Key (references primary key of another table to establish relationships). 🔑\n2. JOINS: Inner Join (matching values in both tables), Left Join (all rows from left + matching from right), Right Join (all from right + matching from left), Full Outer Join (all rows from both). 🔗\n3. NORMALIZATION: Reduces data redundancy and anomaly. 1NF (atomic values), 2NF (in 1NF + no partial dependency), 3NF (in 2NF + no transitive dependency), BCNF (in 3NF + for every dependency X -> Y, X must be a super key). ⚙",
+        "RDBMS organizes data in tables (rows and columns) obeying relational algebra constraints. Keys are constraints that enforce relational integrity. 🗄"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "dbms_advanced",
+      "patterns": [
+        "ACID properties database", "Transactions indexing in dbms", 
+        "Views stored procedures triggers"
+      ],
+      "responses": [
+        "🔒 ADVANCED DBMS TOPICS:\n1. ACID PROPERTIES: Atomicity (all-or-nothing transactions), Consistency (database state integrity maintained), Isolation (transactions run independently), Durability (committed data is permanent). 🔒\n2. INDEXING: Speeds up data retrieval using B-Trees or B+ Trees, at the cost of slower writes.\n3. VIEWS: Virtual tables representing query outputs.\n4. STORED PROCEDURES: Pre-compiled SQL queries saved on the server.\n5. TRIGGERS: SQL statements executed automatically in response to events (INSERT, UPDATE, DELETE). ⚙",
+        "Transactions maintain data validity during failures. Indexing creates structured lookup paths (like book indices) avoiding costly full-table scans. ⚡"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "os_process_threads",
+      "patterns": [
+        "Process vs thread", "CPU scheduling algorithms", 
+        "Process scheduling in OS", "Thread lifecycle"
+      ],
+      "responses": [
+        "⚙ OS PROCESSES & THREADS:\n1. PROCESS vs THREAD: A process is an executing program with its own address space, memory, and resources. A thread is a lightweight process executing code segments within the process, sharing its memory space. 🔄\n2. CPU SCHEDULING: First-Come First-Served (FCFS, non-preemptive), Shortest Job First (SJF, minimizes wait time, can cause starvation), Round Robin (RR, uses time quantum, preemptive, good response time), Priority Scheduling.",
+        "Context switching overhead is lower for threads because they share address spaces. CPU schedulers manage ready queues to maximize CPU utilization. ⚙"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "os_deadlock_sync",
+      "patterns": [
+        "What is deadlock?", "Deadlock avoidance bankers algorithm", 
+        "Process synchronization mutex semaphore"
+      ],
+      "responses": [
+        "🚨 OS SYNCHRONIZATION & DEADLOCKS:\n1. DEADLOCK: Occurs when processes are blocked waiting for resources held by each other. Four Coffman Conditions must hold: Mutual Exclusion, Hold & Wait, No Preemption, Circular Wait. Avoid deadlocks using Banker's Algorithm (resource allocation safety check). 🚨\n2. SYNCHRONIZATION: Mutex (Mutual Exclusion object, binary lock owned by one thread), Semaphore (Integer variable accessed via `wait()` and `signal()` operations. Binary semaphore behaves like a mutex; Counting semaphore coordinates access to N resource instances). 🔄",
+        "Preventing deadlocks requires breaking one of the Coffman conditions. Mutexes avoid race conditions (threads modifying shared variables concurrently). ✅"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "os_memory",
+      "patterns": [
+        "OS memory management", "Paging and segmentation", 
+        "Virtual memory paging replacement algorithms"
+      ],
+      "responses": [
+        "💾 OS MEMORY MANAGEMENT:\n1. PAGING: Non-contiguous physical memory allocation. Divides physical memory into fixed blocks (Frames) and logical memory into blocks (Pages). Causes Internal Fragmentation.\n2. SEGMENTATION: Variable-sized logical division of programs matching developer views (functions, variables). Causes External Fragmentation.\n3. VIRTUAL MEMORY: Execution of processes larger than physical RAM using disk swapping.\n4. PAGE REPLACEMENT: FIFO (First In First Out, suffers from Belady's Anomaly), LRU (Least Recently Used, profiles past access), Optimal (replaces page used furthest in the future). 💾",
+        "Page tables map virtual addresses (Page Number + Offset) to physical addresses (Frame Number + Offset). Translation Lookaside Buffers (TLB) cache these mappings for speed. ⚡"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "cn_models_protocols",
+      "patterns": [
+        "OSI model layers", "TCP IP model", 
+        "HTTP HTTPS DNS DHCP FTP SMTP protocols"
+      ],
+      "responses": [
+        "🌐 COMPUTER NETWORKS PROTOCOLS:\n1. OSI MODEL (7 Layers): Physical (bits), Data Link (frames, MAC), Network (packets, IP routing), Transport (segments, TCP/UDP), Session (session management), Presentation (encryption/compression), Application (HTTP, SMTP). 📡\n2. TCP/IP MODEL (4 Layers): Network Access, Internet, Transport, Application.\n3. PROTOCOLS:\n   - HTTP/HTTPS: Port 80/443. HyperText Transfer Protocol (Secure uses SSL/TLS).\n   - DNS: Port 53. Domain Name System (resolves domain name to IP).\n   - DHCP: Dynamic Host Configuration Protocol (assigns IPs dynamically).\n   - SMTP: Simple Mail Transfer Protocol (sending emails). FTP: File Transfer. 📧",
+        "Transport layer provides reliable delivery (TCP, connection-oriented with 3-way handshake) or fast delivery (UDP, connectionless). 📡"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "cn_routing_switching",
+      "patterns": [
+        "IP address vs MAC address", "Routing vs switching", 
+        "Subnetting IP address"
+      ],
+      "responses": [
+        "🔌 ROUTING & ADDRESSES:\n1. ADDRESSES: IP Address (Logical address, 32-bit IPv4 or 128-bit IPv6, routes packets across networks), MAC Address (Physical address, 48-bit hex, hardcoded on NIC, routes frames within local network).\n2. SWITCHING: Layer 2 Data Link operation. Routes local frames based on MAC addresses using switches.\n3. ROUTING: Layer 3 Network operation. Directs packets across multiple networks based on IP addresses using routers. 🗺",
+        "Subnetting divides a larger IP network into smaller subnetworks to optimize IP address allocation and isolate traffic domain spaces. 🔌"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "oop_concepts",
+      "patterns": [
+        "OOP principles", "Class object encapsulation inheritance", 
+        "Polymorphism abstraction constructor destructor", 
+        "Method overloading vs method overriding"
+      ],
+      "responses": [
+        "📦 OBJECT ORIENTED PROGRAMMING (OOP) CORE:\n1. ENCAPSULATION: Wrapping data (variables) and code (methods) together. Enforced via private access modifiers. 🧬\n2. INHERITANCE: Code reusability where child class inherits parent properties.\n3. POLYMORPHISM: One name, many forms. Compile-time (Method Overloading: same name, different signatures) and Run-time (Method Overriding: same name, same signature, dynamic binding). 🎭\n4. ABSTRACTION: Hiding implementation details and showing only functionality. Enforced via interfaces and abstract classes.\n5. CONSTRUCTOR/DESTRUCTOR: Constructor initializes objects upon creation. Destructor releases memory when objects exit scope.",
+        "Overloading is evaluated during compiling. Overriding is evaluated during execution when a subclass implements a method declared in its parent class. ✅"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "software_engineering",
+      "patterns": [
+        "SDLC models waterfall spiral", "Agile scrum methodology", 
+        "Software testing unit integration regression"
+      ],
+      "responses": [
+        "📋 SOFTWARE ENGINEERING:\n1. SDLC (Software Development Life Cycle): Requirements -> Design -> Coding -> Testing -> Deployment -> Maintenance.\n2. MODELS: Waterfall (sequential phases, rigid), Spiral (risk analysis centered, iterative), Agile (flexible, continuous feedback, iterative loops), Scrum (Agile framework using Sprints, Daily Standups, and Product Backlogs). 🔄\n3. TESTING:\n   - Unit Testing: Tests individual modules/functions in isolation.\n   - Integration Testing: Verifies interfaces between interacting modules.\n   - Regression Testing: Re-tests existing features after code modifications. 🐞",
+        "Agile promotes adapting to change. Waterfall works best when requirements are fully locked in and stable from the project start. 📋"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "web_development",
+      "patterns": [
+        "Web dev frontend HTML CSS JavaScript", "Bootstrap responsive design", 
+        "Backend Python Flask Django REST API", "MySQL vs MongoDB database"
+      ],
+      "responses": [
+        "🌐 WEB DEVELOPMENT:\n1. FRONTEND: HTML (Structure), CSS (Style/Layouts), JavaScript (Interactive logic), Responsive Design (making pages fit all screen sizes), Bootstrap (CSS library for grids). 🎨\n2. BACKEND: Python frameworks: Flask (lightweight microframework) or Django (battery-included full-stack framework). REST APIs return JSON payloads using HTTP methods (GET, POST, PUT, DELETE). 🐍\n3. DATABASES: MySQL (relational, structured tables, strict schemas) or MongoDB (NoSQL, document-based storing dynamic JSON documents). 🗄",
+        "Frontend focuses on the browser. Backend manages business logic, databases, API controllers, and server deployments. 🌐"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "ai_machine_learning",
+      "patterns": [
+        "AI basics machine learning", "Deep learning neural networks", 
+        "NLP chatbots TensorFlow Scikit-learn"
+      ],
+      "responses": [
+        "🤖 AI & MACHINE LEARNING:\n1. ML: Subfield of AI where algorithms learn patterns from data. Categories: Supervised (labeled data: regression, classification), Unsupervised (unlabeled: clustering), Reinforcement (rewards based). 🧠\n2. DEEP LEARNING: Subfield of ML using artificial neural networks with multiple layers (deep models) to model abstract patterns. 🕸\n3. NLP (Natural Language Processing): Computational parsing of human language (tokenizing, parsing, sentiment analysis).\n4. LIBRARIES: Scikit-learn (traditional ML models like SVM, Decision Trees, KNN), TensorFlow/Keras (deep neural network layers).",
+        "Chatbots classify user input sequences and fetch responses. Keras models use sequential layers of neurons optimized by gradient descent algorithms. 🤖"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "git_github",
+      "patterns": [
+        "Git repository commit branch", "Merge pull request clone fork", 
+        "Version control commands"
+      ],
+      "responses": [
+        "🌿 GIT & GITHUB ESSENTIALS:\n1. GIT: Local distributed version control system. Common commands: `git init` (initialize repo), `git add` (stage files), `git commit -m` (save changes), `git branch` (manage tracks), `git merge` (combine tracks). 💾\n2. GITHUB: Cloud platform hosting git repositories.\n3. OPERATIONS: Clone (downloading remote repo locally), Fork (copying another developer's repo to your own account), Pull Request (asking owners of original repo to merge your commits). 🤝",
+        "Use Git to maintain project versions. Branches isolate features, and merges incorporate completed code into the main production line. 🌿"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "hr_questions",
+      "patterns": [
+        "HR interview questions prep", "Tell me about yourself HR", 
+        "Why should we hire you strength weakness", 
+        "Where do you see yourself in 5 years?", 
+        "Challenge you overcame"
+      ],
+      "responses": [
+        "👔 HR INTERVIEW CHEATSHEET:\n1. INTRO: Use Present-Past-Future. Profile your active college/skills, talk about projects/internships, and state why you fit this job role. 😊\n2. WHY HIRE: Link your skills directly to the JD. Highlight how your project profiles align with their tech stack. 💪\n3. STRENGTH/WEAKNESS: Share relevant strengths (e.g. quick learning). Weakness: share a real, non-essential skill gap (like public speaking) and how you are working to improve it. 🎯\n4. 5 YEARS: Express desire to grow technically, master development frameworks, and lead projects. 🏆\n5. CHALLENGE: Use STAR method. Detail a group conflict, a technical bug, or tight deadline, and how you logically resolved it. ✅",
+        "Always research the company before the interview. Highlight your teamwork, adaptability, and passion for continuous learning in every answer. 👔"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "resume_preparation",
+      "patterns": [
+        "Resume format skills section", "Projects and achievements resume", 
+        "Common resume mistakes"
+      ],
+      "responses": [
+        "📄 RESUME GUIDELINES:\n1. FORMAT: Keep it to 1 page. Use clean, single-column LaTeX templates. Use clear divisions: Education, Skills, Experience, Projects, Achievements. 📄\n2. SKILLS: Categorize by type (e.g. Languages: Python, Java; Frameworks: React, Django; databases: SQL).\n3. PROJECTS: Detail 2-3 unique projects. Use STAR/Google XYZ points: 'Developed X using Y, increasing performance by Z%'. 🛠\n4. CERTIFICATIONS: List valid technical certifications with verifiable links.\n5. MISTAKES: Avoid spelling/grammar errors, colored progress bars (e.g., 90% Java), and long paragraphs. Do not send DOCX; always export as PDF. 🚨",
+        "Action verbs (e.g. Architected, Integrated, Optimized) should start every bullet point. Quantifying results (percentages, numbers) adds high credibility. 📈"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "group_discussion",
+      "patterns": [
+        "Group discussion topics", "GD on AI remote work climate change", 
+        "Social media EVs online education", "GD entry tips"
+      ],
+      "responses": [
+        "🗣 GROUP DISCUSSION (GD) TIPS:\n1. STRUCTURE: Acknowledge previous speakers and build on their points politely. Speak with clarity and structure arguments logically.\n2. TOPICS:\n   - AI/Remote Work: Focus on productivity gains vs cybersecurity, data privacy, and isolation. 🤖\n   - Climate Change: Focus on carbon tax, international protocols, and individual accountability. 🌍\n   - EVs: Focus on zero emissions vs high initial costs, battery raw materials, and charging grids. 🚗\n   - Online Education: Focus on accessibility vs lack of practical training and digital divide. 💻",
+        "Never interrupt others. If you initiate the GD, define the topic clearly. If you conclude, summarize all perspectives fairly. 🗣"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "coding_interview",
+      "patterns": [
+        "Coding interview questions arrays strings", "Linked lists trees graphs coding questions", 
+        "DP recursion hash maps stacks queues"
+      ],
+      "responses": [
+        "💻 CODING INTERVIEW STRATEGY:\n1. ARRAYS/STRINGS: Master sliding window, hashing frequencies, and sorting elements.\n2. LINKED LISTS: Practice Floyd's cycle detection, reversals, and node merges.\n3. TREES/GRAPHS: DFS, BFS, and recursive tree height checks.\n4. RECURSION/DP: Map out state recurrence relations. Think about memory tables to avoid recalculated states. 🧠\n5. STACKS/QUEUES: Use stacks for parentheses checks or monotone queues for sliding window maximums.\n6. PIPELINE: Speak your logic out loud, check constraints, trace code with dry-run test cases, and explain time/space complexities immediately. 📝",
+        "Always dry-run your logic on paper or standard output with base cases (null, single element, negative inputs) before telling the interviewer you have finished coding. ✅"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "company_prep",
+      "patterns": [
+        "TCS Infosys Wipro recruitment process", "Accenture Capgemini Cognizant pattern", 
+        "HCLTech Tech Mahindra coding round", "Company specific FAQ"
+      ],
+      "responses": [
+        "🏢 SERVICE COMPANIES RECRUITMENT PATTERNS:\n1. TCS (Ninja/Digital): Online test (Quants, Verbal, Reasoning + 2 Coding Qs in 45 mins). Followed by TR/MR/HR combined interview. 🏢\n2. INFOSYS (System Engineer/Power Programmer): Aptitude, Puzzle solving, and Coding rounds. Technical interviews focus on projects and basic DSA/OOP. 💻\n3. WIPRO (Elite/Turbo): Quants, Verbal, Logical, Essay writing + 2 Coding questions. Technical round focuses on core CS fundamentals. 👔\n4. ACCENTURE: Cognitive assessment (Reasoning, English), Technical (Pseudocode, Cloud, Network, Security), Coding round, and HR interview. 📋",
+        "For service companies, focus heavily on basic aptitude speed-tests, SQL syntax, basic coding questions (arrays, string processing), and structured project explanations. ✅"
+      ],
+      "context": [""]
+    },
+    {
+      "tag": "soft_skills",
+      "patterns": [
+        "Communication skills time management", "Teamwork leadership", 
+        "Problem solving critical thinking adaptability presentation"
+      ],
+      "responses": [
+        "👑 SOFT SKILLS FOR ENGINEERS:\n1. COMMUNICATION: Active listening, clear explanation of technical ideas, and constructive feedback loops. 🗣\n2. TIME MANAGEMENT: Prioritization using task lists, scheduling work intervals, and avoiding multitasking. ⏰\n3. TEAMWORK & LEADERSHIP: Supporting teammates, managing peer conflicts, and taking initiative in college project teams. 🤝\n4. ADAPTABILITY: Eagerness to learn new libraries and pick up fresh programming frameworks dynamically. 💡",
+        "Interviews evaluate soft skills through behavioral queries: 'Tell me about a time you had a conflict with a teammate.' Answer by focusing on collaboration and positive outcomes. 🎭"
+      ],
+      "context": [""]
+    }
+  ]
+}

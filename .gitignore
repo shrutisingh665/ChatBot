@@ -1,0 +1,19 @@
+# Buildozer compiler output directories
+.buildozer/
+bin/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local SQLite databases and logs
+*.db
+*.txt
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
