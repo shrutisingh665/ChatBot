@@ -45,7 +45,7 @@ android.permissions = INTERNET, RECORD_AUDIO
 android.api = 33
 
 # (int) Minimum Android API level
-android.minapi = 21
+android.minapi = 24
 
 # (str) Android NDK version to use
 android.ndk = 25c
