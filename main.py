@@ -7,17 +7,15 @@ import sys
 
 # Ensure local NLTK data folder path is registered
 import nltk
-nltk_data_dir = os.path.join(os.path.dirname(__file__), 'nltk_data')
-if not os.path.exists(nltk_data_dir):
-    os.makedirs(nltk_data_dir)
+from kivy.utils import platform
+
+if platform == 'android':
+    nltk_data_dir = os.path.join(os.environ.get('ANDROID_PRIVATE', '.'), 'nltk_data')
+else:
+    nltk_data_dir = os.path.join(os.path.dirname(__file__), 'nltk_data')
+
 if nltk_data_dir not in nltk.data.path:
     nltk.data.path.append(nltk_data_dir)
-
-try:
-    nltk.download('punkt', download_dir=nltk_data_dir, quiet=True)
-    nltk.download('wordnet', download_dir=nltk_data_dir, quiet=True)
-except Exception as e:
-    print(f"NLTK download failed/skipped: {e}")
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
@@ -88,12 +86,58 @@ class AIAppManager(App):
 
     def on_start(self):
         """Requests required runtime Android permissions at startup."""
+        import threading
+        
+        # Start background unzipping of prepackaged NLTK zips on Android
+        threading.Thread(target=self.extract_nltk_data, daemon=True).start()
+
         if platform == 'android':
             try:
                 from android.permissions import request_permissions, Permission
-                request_permissions([Permission.RECORD_AUDIO, Permission.INTERNET])
+                request_permissions([Permission.RECORD_AUDIO])
             except Exception as e:
                 print(f"Failed to request Android permissions: {e}")
+
+    def extract_nltk_data(self):
+        """Asynchronously unzips prepackaged NLTK zip archives to writable internal storage."""
+        import zipfile
+        if platform == 'android':
+            nltk_data_dir = os.path.join(os.environ.get('ANDROID_PRIVATE', '.'), 'nltk_data')
+        else:
+            nltk_data_dir = os.path.join(os.path.dirname(__file__), 'nltk_data')
+
+        os.makedirs(nltk_data_dir, exist_ok=True)
+        app_dir = os.path.dirname(__file__)
+
+        # Extract WordNet corpus
+        wordnet_zip = os.path.join(app_dir, 'nltk_data', 'corpora', 'wordnet.zip')
+        wordnet_dest = os.path.join(nltk_data_dir, 'corpora')
+        if os.path.exists(wordnet_zip):
+            if not os.path.exists(os.path.join(wordnet_dest, 'wordnet')):
+                os.makedirs(wordnet_dest, exist_ok=True)
+                try:
+                    with zipfile.ZipFile(wordnet_zip, 'r') as zf:
+                        zf.extractall(wordnet_dest)
+                    print("NLTK extraction: successfully unzipped wordnet.zip")
+                except Exception as e:
+                    print(f"NLTK extraction: error unzipping wordnet.zip: {e}")
+            else:
+                print("NLTK extraction: wordnet already unzipped")
+
+        # Extract Punkt tokenizer
+        punkt_zip = os.path.join(app_dir, 'nltk_data', 'tokenizers', 'punkt.zip')
+        punkt_dest = os.path.join(nltk_data_dir, 'tokenizers')
+        if os.path.exists(punkt_zip):
+            if not os.path.exists(os.path.join(punkt_dest, 'punkt')):
+                os.makedirs(punkt_dest, exist_ok=True)
+                try:
+                    with zipfile.ZipFile(punkt_zip, 'r') as zf:
+                        zf.extractall(punkt_dest)
+                    print("NLTK extraction: successfully unzipped punkt.zip")
+                except Exception as e:
+                    print(f"NLTK extraction: error unzipping punkt.zip: {e}")
+            else:
+                print("NLTK extraction: punkt already unzipped")
 
 if __name__ == '__main__':
     AIAppManager().run()

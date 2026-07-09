@@ -16,10 +16,13 @@ package.domain = org.placement.prep
 source.dir = .
 
 # (list) Source files to include (comma separated)
-source.include_exts = py,png,jpg,json,txt,db,pkl
+source.include_exts = py,png,jpg,json,txt,db,pkl,zip,pickle
 
 # (list) List of directory patterns to include (comma separated)
 source.include_patterns = assets/*, nltk_data/*, documents/*
+
+# (list) List of directory patterns to exclude (comma separated)
+exclude_dirs = desktop, training, .git, .github
 
 # (str) Application versioning
 version = 1.0
@@ -27,7 +30,7 @@ version = 1.0
 # (list) Application requirements
 # Note: TensorFlow is omitted and replaced by pure NumPy weight inference, 
 # resulting in extremely lightweight builds (< 20MB) and guaranteed stability.
-requirements = python3, kivy==2.3.0, pyjnius, numpy, pillow, deep-translator, requests, urllib3, certifi, idna, charset-normalizer, beautifulsoup4, soupsieve, nltk
+requirements = python3,kivy==2.3.0,android,pyjnius,numpy,pillow,deep-translator,requests,urllib3,certifi,idna,charset-normalizer,beautifulsoup4,soupsieve,nltk
 
 # (str) Supported orientations (one of landscape, portrait or all)
 orientation = portrait

@@ -12,17 +12,15 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 
 # Setup local NLTK data directory path dynamically
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-nltk_data_dir = os.path.join(BASE_DIR, 'nltk_data')
+from kivy.utils import platform
+if platform == 'android':
+    nltk_data_dir = os.path.join(os.environ.get('ANDROID_PRIVATE', '.'), 'nltk_data')
+else:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    nltk_data_dir = os.path.join(BASE_DIR, 'nltk_data')
+
 if nltk_data_dir not in nltk.data.path:
     nltk.data.path.append(nltk_data_dir)
-
-# Ensure NLTK packages are present locally
-try:
-    nltk.download('punkt', download_dir=nltk_data_dir, quiet=True)
-    nltk.download('wordnet', download_dir=nltk_data_dir, quiet=True)
-except Exception as e:
-    print(f"NLTK data download skipped or failed: {e}")
 
 lemmatizer = WordNetLemmatizer()
 
