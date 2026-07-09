@@ -34,17 +34,7 @@ jobs:
         pip install --upgrade pip
         pip install buildozer cython==0.29.36
 
-    - name: Configure Pre-installed Android SDK and NDK Paths
-      run: |
-        # Find the first pre-installed NDK folder
-        NDK_DIR=$(ls -d /usr/local/lib/android/sdk/ndk/* | head -n 1)
-        echo "Using pre-installed Android SDK: /usr/local/lib/android/sdk"
-        echo "Using pre-installed Android NDK: $NDK_DIR"
-        
-        # Append configurations to buildozer.spec
-        echo "" >> buildozer.spec
-        echo "android.sdk_path = /usr/local/lib/android/sdk" >> buildozer.spec
-        echo "android.ndk_path = $NDK_DIR" >> buildozer.spec
+
 
     - name: Package Android APK using Buildozer
       run: |
